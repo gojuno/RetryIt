@@ -1,0 +1,20 @@
+<%- include("helpers/Helpers") -%>
+
+<%_ for type in types.enums where type.annotations[Key.Presentable.generateV2] != nil && type.annotations[Key.Skip.presentable] == nil { _-%>
+<%_ let fraktal = Fraktal(type: type) _-%><% -%>
+// sourcery:inline:<%= type.name %>.AnyPresentable
+// swiftlint:disable line_length
+<%= fraktal.accessLevel %> extension <%= removeDots(type.name) %>AnyPresentable {
+
+    init(_ value: <%= type.name %>) {
+        switch value {
+        <%_ for presenter in fraktal.enumPresenters { -%>
+        case .<%= presenter.caseName %><%= presenter.caseValues %>:
+            self = .<%= presenter.caseName %><%= presenter.valuePresenter.map({ "(\($0.presentableMappedProperty(on: $0.variableName, needTypeCast: true)))" }) ?? "" %>
+        <%_ } -%>
+        }
+    }
+}
+// swiftlint:enable line_length
+// sourcery:end
+<% } -%>

@@ -1,0 +1,3 @@
+github "ReactiveCocoa/ReactiveSwift" "5.0.0"
+github "antitypical/Result" "4.1.0"
+github "gojuno/FraktalSimplified" "v0.1.2"
