@@ -15,6 +15,7 @@
 		2F22844A224CD8D90011B29A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F228449224CD8D90011B29A /* Alert.swift */; };
 		2F22844C224CD94C0011B29A /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22844B224CD94C0011B29A /* ActionViewModel.swift */; };
 		2F22846B224D028F0011B29A /* Endpoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22846A224D028F0011B29A /* Endpoint+Helpers.swift */; };
+		2F22846E2250E7E30011B29A /* Reactive+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22846D2250E7E30011B29A /* Reactive+Utils.swift */; };
 		2F34E3EC224BBFEA00279BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34E3EB224BBFEA00279BE8 /* AppDelegate.swift */; };
 		2F34E3EE224BBFEA00279BE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34E3ED224BBFEA00279BE8 /* ViewController.swift */; };
 		2F34E3F3224BBFEC00279BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F34E3F2224BBFEC00279BE8 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		2F228449224CD8D90011B29A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2F22844B224CD94C0011B29A /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
 		2F22846A224D028F0011B29A /* Endpoint+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Helpers.swift"; sourceTree = "<group>"; };
+		2F22846D2250E7E30011B29A /* Reactive+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Utils.swift"; sourceTree = "<group>"; };
 		2F34E3E8224BBFEA00279BE8 /* RetryIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetryIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F34E3EB224BBFEA00279BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F34E3ED224BBFEA00279BE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		2F22846C2250E7D00011B29A /* ReactiveUtils */ = {
+			isa = PBXGroup;
+			children = (
+				2F22846D2250E7E30011B29A /* Reactive+Utils.swift */,
+			);
+			path = ReactiveUtils;
+			sourceTree = "<group>";
+		};
 		2F34E3DF224BBFEA00279BE8 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		2F34E3EA224BBFEA00279BE8 /* RetryIt */ = {
 			isa = PBXGroup;
 			children = (
+				2F22846C2250E7D00011B29A /* ReactiveUtils */,
 				2F22841F224CD8910011B29A /* Alert */,
 				2F22841A224CD7F70011B29A /* Generated */,
 				2F130BF8224BE360000E0404 /* Components */,
@@ -208,6 +219,7 @@
 				2F130BFD224BF3F4000E0404 /* BiographyEndpoint.swift in Sources */,
 				2F22844C224CD94C0011B29A /* ActionViewModel.swift in Sources */,
 				2F22841D224CD7F70011B29A /* AutoAnyPresentableEnumV2Declaration.generated.swift in Sources */,
+				2F22846E2250E7E30011B29A /* Reactive+Utils.swift in Sources */,
 				2F130BF7224BE35C000E0404 /* LoginScreen.swift in Sources */,
 				2F22846B224D028F0011B29A /* Endpoint+Helpers.swift in Sources */,
 				2F130BFB224BF094000E0404 /* AuthorizationEndpoint.swift in Sources */,
