@@ -85,7 +85,7 @@ extension Action {
     static func simple(
         enabledIf enabled: Property<Bool> = Property(value: true),
         f: @escaping () -> Void = {}
-        ) -> Action {
+    ) -> Action {
         return Action(enabledIf: enabled) { _ in
             return SignalProducer { observer, _ in
                 f()

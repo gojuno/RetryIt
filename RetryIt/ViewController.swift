@@ -114,7 +114,7 @@ private extension ViewController {
 private extension UIAlertAction {
 
     convenience init(_ alertAction: AlertAction) {
-        self.init(title: alertAction.title, style: alertAction.style.uiStyle, handler: { _ in alertAction.action.simpleAction() })
+        self.init(title: alertAction.title, style: alertAction.style.uiStyle, handler: { _ in alertAction.action.apply().start() })
     }
 }
 
