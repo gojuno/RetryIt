@@ -9,7 +9,7 @@
 import UIKit
 import FraktalSimplified
 
-final class ViewController: UIViewController {
+final class SuperSecuredViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,24 +36,25 @@ final class ViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     private let loadingView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .whiteLarge)
-        view.color = UIColor.gray
+        view.color = .black
         return view
     }()
 }
 
-extension ViewController {
+extension SuperSecuredViewController {
 
-    var presenter: Presenter<AnyPresentable<LoginScreenPresenters>> {
+    var presenter: Presenter<AnyPresentable<SuperSecuredScreenPresenters>> {
         return Presenter.UI { [weak self] presentable in
             guard let someSelf = self else {
                 return nil
             }
             return presentable.present(
-                LoginScreenPresenters(
+                SuperSecuredScreenPresenters(
                     child: someSelf.childPresenter,
                     alert: someSelf.alertPresenter
                 )
@@ -61,7 +62,7 @@ extension ViewController {
         }
     }
 
-    private var childPresenter: Presenter<LoginScreenChildAnyPresentable> {
+    private var childPresenter: Presenter<SuperSecuredScreenChildAnyPresentable> {
         return Presenter.UI { [weak self] presentable in
             guard let someSelf = self else {
                 return nil
@@ -93,7 +94,7 @@ extension ViewController {
     }
 }
 
-private extension ViewController {
+private extension SuperSecuredViewController {
 
     func present(alert: Alert) {
         let alertController = UIAlertController(title: alert.content.title, message: alert.content.text, preferredStyle: .alert)

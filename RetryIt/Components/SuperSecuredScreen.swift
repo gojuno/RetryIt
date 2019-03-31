@@ -18,23 +18,23 @@ enum APIError: Error {
 }
 
 // sourcery: presentableV2
-final class LoginScreen {
+final class SuperSecuredScreen {
 
     init() {
         let authorizationEndpoint = AuthorizationEndpoint()
-        let biographyEndpoint = BiographyEndpoint()
+        let biographyEndpoint = SuperSecuredEndpoint()
 
         let authorizationAction = Action<Void, Token, APIError> { _ in
             return authorizationEndpoint.apply()
         }
 
-        let biographyAction = Action<Token, Biography, APIError> {
+        let biographyAction = Action<Token, SuperSecuredData, APIError> {
             return biographyEndpoint.apply($0)
         }
 
-        let action = Action<Void, Biography, APIError> { _ -> SignalProducer<Biography, APIError> in
+        let action = Action<Void, SuperSecuredData, APIError> { _ -> SignalProducer<SuperSecuredData, APIError> in
             authorizationAction.apply(()).expectedToBeEnabled()
-                .flatMap(.latest) { token -> SignalProducer<Biography, APIError> in
+                .flatMap(.latest) { token -> SignalProducer<SuperSecuredData, APIError> in
                     biographyAction.apply(token).expectedToBeEnabled()
                 }
         }
@@ -46,33 +46,33 @@ final class LoginScreen {
             .map { $0.alert }
             .ignoreNil()
         self.child = self.state.producer
-            .map(LoginScreenChild.init)
+            .map(SuperSecuredScreenChild.init)
             .ignoreNil()
     }
 
-    private let state: Property<LoadingState<Biography, APIError>>
-    // sourcery: presentable, type = * $LoginScreenChild
-    private let child: SignalProducer<LoginScreenChild, NoError>
+    private let state: Property<LoadingState<SuperSecuredData, APIError>>
+    // sourcery: presentable, type = * $SuperSecuredScreenChild
+    private let child: SignalProducer<SuperSecuredScreenChild, NoError>
     // sourcery: presentable, type = * Alert
     private let alert: SignalProducer<Alert, NoError>
 }
 
 // sourcery: presentableV2
-enum LoginScreenChild {
-    case content(Biography)
+enum SuperSecuredScreenChild {
+    case content(SuperSecuredData)
     case error(String)
     case loading
 }
 
-// sourcery:inline:LoginScreen.Presentable
+// sourcery:inline:SuperSecuredScreen.Presentable
 // swiftlint:disable line_length
-extension LoginScreen: Presentable {
+extension SuperSecuredScreen: Presentable {
 
-    internal var present: (LoginScreenPresenters) -> Disposable? {
+    internal var present: (SuperSecuredScreenPresenters) -> Disposable? {
         return { [weak self] presenters in
             guard let sself = self else { return nil }
             let disposable = CompositeDisposable()
-            disposable += presenters.child.present(sself.child.producer.map { LoginScreenChildAnyPresentable($0) })
+            disposable += presenters.child.present(sself.child.producer.map { SuperSecuredScreenChildAnyPresentable($0) })
             disposable += presenters.alert.present(sself.alert)
             return disposable
         }
@@ -81,11 +81,11 @@ extension LoginScreen: Presentable {
 // swiftlint:enable line_length
 // sourcery:end
 
-// sourcery:inline:LoginScreenChild.AnyPresentable
+// sourcery:inline:SuperSecuredScreenChild.AnyPresentable
 // swiftlint:disable line_length
-internal extension LoginScreenChildAnyPresentable {
+internal extension SuperSecuredScreenChildAnyPresentable {
 
-    init(_ value: LoginScreenChild) {
+    init(_ value: SuperSecuredScreenChild) {
         switch value {
         case .content(let item):
             self = .content(item)
@@ -99,9 +99,9 @@ internal extension LoginScreenChildAnyPresentable {
 // swiftlint:enable line_length
 // sourcery:end
 
-private extension LoginScreenChild {
+private extension SuperSecuredScreenChild {
 
-    init?(_ state: LoadingState<Biography, APIError>) {
+    init?(_ state: LoadingState<SuperSecuredData, APIError>) {
         switch state {
         case .error:
             return nil

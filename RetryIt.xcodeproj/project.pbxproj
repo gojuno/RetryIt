@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F130BF7224BE35C000E0404 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F130BF6224BE35C000E0404 /* LoginScreen.swift */; };
+		2F130BF7224BE35C000E0404 /* SuperSecuredScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F130BF6224BE35C000E0404 /* SuperSecuredScreen.swift */; };
 		2F130BFB224BF094000E0404 /* AuthorizationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F130BFA224BF094000E0404 /* AuthorizationEndpoint.swift */; };
-		2F130BFD224BF3F4000E0404 /* BiographyEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F130BFC224BF3F4000E0404 /* BiographyEndpoint.swift */; };
+		2F130BFD224BF3F4000E0404 /* SuperSecuredEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F130BFC224BF3F4000E0404 /* SuperSecuredEndpoint.swift */; };
 		2F22841D224CD7F70011B29A /* AutoAnyPresentableEnumV2Declaration.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22841B224CD7F70011B29A /* AutoAnyPresentableEnumV2Declaration.generated.swift */; };
 		2F22841E224CD7F70011B29A /* AutoPresentersV2.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22841C224CD7F70011B29A /* AutoPresentersV2.generated.swift */; };
 		2F22844A224CD8D90011B29A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F228449224CD8D90011B29A /* Alert.swift */; };
 		2F22846B224D028F0011B29A /* Endpoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22846A224D028F0011B29A /* Endpoint+Helpers.swift */; };
 		2F22846E2250E7E30011B29A /* Reactive+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22846D2250E7E30011B29A /* Reactive+Utils.swift */; };
 		2F34E3EC224BBFEA00279BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34E3EB224BBFEA00279BE8 /* AppDelegate.swift */; };
-		2F34E3EE224BBFEA00279BE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34E3ED224BBFEA00279BE8 /* ViewController.swift */; };
+		2F34E3EE224BBFEA00279BE8 /* SuperSecuredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34E3ED224BBFEA00279BE8 /* SuperSecuredViewController.swift */; };
 		2F34E3F3224BBFEC00279BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F34E3F2224BBFEC00279BE8 /* Assets.xcassets */; };
 		2F34E3F6224BBFEC00279BE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F34E3F4224BBFEC00279BE8 /* LaunchScreen.storyboard */; };
 		2F34E3FF224BC1A000279BE8 /* FraktalSimplified.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F34E3FE224BC1A000279BE8 /* FraktalSimplified.framework */; };
@@ -24,9 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F130BF6224BE35C000E0404 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		2F130BF6224BE35C000E0404 /* SuperSecuredScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecuredScreen.swift; sourceTree = "<group>"; };
 		2F130BFA224BF094000E0404 /* AuthorizationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationEndpoint.swift; sourceTree = "<group>"; };
-		2F130BFC224BF3F4000E0404 /* BiographyEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyEndpoint.swift; sourceTree = "<group>"; };
+		2F130BFC224BF3F4000E0404 /* SuperSecuredEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecuredEndpoint.swift; sourceTree = "<group>"; };
 		2F22841B224CD7F70011B29A /* AutoAnyPresentableEnumV2Declaration.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAnyPresentableEnumV2Declaration.generated.swift; sourceTree = "<group>"; };
 		2F22841C224CD7F70011B29A /* AutoPresentersV2.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoPresentersV2.generated.swift; sourceTree = "<group>"; };
 		2F228449224CD8D90011B29A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -34,7 +34,7 @@
 		2F22846D2250E7E30011B29A /* Reactive+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Utils.swift"; sourceTree = "<group>"; };
 		2F34E3E8224BBFEA00279BE8 /* RetryIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetryIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F34E3EB224BBFEA00279BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F34E3ED224BBFEA00279BE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F34E3ED224BBFEA00279BE8 /* SuperSecuredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecuredViewController.swift; sourceTree = "<group>"; };
 		2F34E3F2224BBFEC00279BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F34E3F5224BBFEC00279BE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F34E3F7224BBFEC00279BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +57,9 @@
 		2F130BF8224BE360000E0404 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2F130BF6224BE35C000E0404 /* LoginScreen.swift */,
+				2F130BF6224BE35C000E0404 /* SuperSecuredScreen.swift */,
 				2F130BFA224BF094000E0404 /* AuthorizationEndpoint.swift */,
-				2F130BFC224BF3F4000E0404 /* BiographyEndpoint.swift */,
+				2F130BFC224BF3F4000E0404 /* SuperSecuredEndpoint.swift */,
 				2F22846A224D028F0011B29A /* Endpoint+Helpers.swift */,
 			);
 			path = Components;
@@ -116,7 +116,7 @@
 				2F130BF8224BE360000E0404 /* Components */,
 				2F34E400224BC2A500279BE8 /* Retryable */,
 				2F34E3EB224BBFEA00279BE8 /* AppDelegate.swift */,
-				2F34E3ED224BBFEA00279BE8 /* ViewController.swift */,
+				2F34E3ED224BBFEA00279BE8 /* SuperSecuredViewController.swift */,
 				2F34E3F2224BBFEC00279BE8 /* Assets.xcassets */,
 				2F34E3F4224BBFEC00279BE8 /* LaunchScreen.storyboard */,
 				2F34E3F7224BBFEC00279BE8 /* Info.plist */,
@@ -212,11 +212,11 @@
 			files = (
 				2F22844A224CD8D90011B29A /* Alert.swift in Sources */,
 				2F22841E224CD7F70011B29A /* AutoPresentersV2.generated.swift in Sources */,
-				2F34E3EE224BBFEA00279BE8 /* ViewController.swift in Sources */,
-				2F130BFD224BF3F4000E0404 /* BiographyEndpoint.swift in Sources */,
+				2F34E3EE224BBFEA00279BE8 /* SuperSecuredViewController.swift in Sources */,
+				2F130BFD224BF3F4000E0404 /* SuperSecuredEndpoint.swift in Sources */,
 				2F22841D224CD7F70011B29A /* AutoAnyPresentableEnumV2Declaration.generated.swift in Sources */,
 				2F22846E2250E7E30011B29A /* Reactive+Utils.swift in Sources */,
-				2F130BF7224BE35C000E0404 /* LoginScreen.swift in Sources */,
+				2F130BF7224BE35C000E0404 /* SuperSecuredScreen.swift in Sources */,
 				2F22846B224D028F0011B29A /* Endpoint+Helpers.swift in Sources */,
 				2F130BFB224BF094000E0404 /* AuthorizationEndpoint.swift in Sources */,
 				2F34E402224BC2B700279BE8 /* Retryable.swift in Sources */,

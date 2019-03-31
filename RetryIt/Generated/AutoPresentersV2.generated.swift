@@ -7,13 +7,13 @@ import FraktalSimplified
 import ReactiveSwift
 
 
-struct LoginScreenPresenters {
+struct SuperSecuredScreenPresenters {
 
-    let child: Presenter<LoginScreenChildAnyPresentable>
+    let child: Presenter<SuperSecuredScreenChildAnyPresentable>
     let alert: Presenter<Alert>
 
     init(
-        child: Presenter<LoginScreenChildAnyPresentable>,
+        child: Presenter<SuperSecuredScreenChildAnyPresentable>,
         alert: Presenter<Alert>
     ) {
         self.child = child

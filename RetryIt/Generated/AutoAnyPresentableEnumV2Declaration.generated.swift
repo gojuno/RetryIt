@@ -7,8 +7,8 @@ import FraktalSimplified
 import ReactiveSwift
 
 
-enum LoginScreenChildAnyPresentable {
-    case content(Biography)
+enum SuperSecuredScreenChildAnyPresentable {
+    case content(SuperSecuredData)
     case error(String)
     case loading
 }

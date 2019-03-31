@@ -8,20 +8,20 @@
 
 import ReactiveSwift
 
-typealias Biography = String
+typealias SuperSecuredData = String
 
-final class BiographyEndpoint {
+final class SuperSecuredEndpoint {
 
-    let apply: ((Token) -> SignalProducer<Biography, APIError>)
+    let apply: ((Token) -> SignalProducer<SuperSecuredData, APIError>)
 
     init() {
         var runCount = 0
         self.apply = { token in
-            print("Biography request fired \(runCount) with token \(token)")
+            print("Super secured request fired \(runCount) with token \(token)")
             runCount += 1
 
             if runCount > 3 {
-                return SignalProducer.request(value: "Some Biography")
+                return SignalProducer.request(value: "Attention, super secured data, mum's the word!!!")
             } else if runCount % 2 == 0 {
                 return SignalProducer.request(error: APIError.service)
             } else {

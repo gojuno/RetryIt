@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = ViewController()
+        let viewController = SuperSecuredViewController()
         window.rootViewController = viewController
         window.makeKeyAndVisible()
         self.window = window
 
-        let screen = LoginScreen()
-        self.loginScreen = screen
+        let screen = SuperSecuredScreen()
+        self.superSecuredScreen = screen
 
         self.disposable = viewController.presenter.present(screen)
         return true
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         disposable?.dispose()
     }
 
-    private var loginScreen: LoginScreen?
+    private var superSecuredScreen: SuperSecuredScreen?
     private var disposable: Disposable?
 }
 
