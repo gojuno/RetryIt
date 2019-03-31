@@ -20,7 +20,7 @@ final class AuthorizationEndpoint {
             print("Authorization request fired \(runCount).")
             runCount += 1
 
-            if runCount > 3 {
+            if runCount > 2 {
                 return SignalProducer.request(value: "Some Token")
             } else if runCount % 2 == 0 {
                 return SignalProducer.request(error: APIError.noInternet)

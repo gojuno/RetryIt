@@ -13,12 +13,12 @@ extension SignalProducer {
 
     static func request(value: Value) -> SignalProducer<Value, Error> {
         return SignalProducer(value: value)
-            .delay(3, on: QueueScheduler(qos: .background))
+            .delay(1, on: QueueScheduler(qos: .background))
     }
 
     static func request(error: Error) -> SignalProducer<Value, Error> {
         return SignalProducer<Void, NoError>(value: Void())
-            .delay(3, on: QueueScheduler(qos: .background))
+            .delay(1.5, on: QueueScheduler(qos: .background))
             .flatMap(.latest) { SignalProducer(error: error) }
     }
 }

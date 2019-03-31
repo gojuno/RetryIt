@@ -20,12 +20,12 @@ final class SuperSecuredEndpoint {
             print("Super secured request fired \(runCount) with token \(token)")
             runCount += 1
 
-            if runCount > 3 {
+            if runCount > 1 {
                 return SignalProducer.request(value: "Attention, super secured data, mum's the word!!!")
             } else if runCount % 2 == 0 {
-                return SignalProducer.request(error: APIError.service)
-            } else {
                 return SignalProducer.request(error: APIError.notAllowed)
+            } else {
+                return SignalProducer.request(error: APIError.service)
             }
         }
     }
