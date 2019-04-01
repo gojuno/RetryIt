@@ -11,12 +11,6 @@ import FraktalSimplified
 import ReactiveSwift
 import Result
 
-enum APIError: Error {
-    case noInternet
-    case service
-    case notAllowed
-}
-
 // sourcery: presentableV2
 final class SuperSecuredScreen {
 
@@ -32,7 +26,9 @@ final class SuperSecuredScreen {
             return biographyEndpoint.apply($0)
         }
 
-        let action = Action<Void, SuperSecuredData, APIError> { _ -> SignalProducer<SuperSecuredData, APIError> in
+        let action = Action<Void, SuperSecuredData, APIError>(
+            enabledIf: authorizationAction.isEnabled && biographyAction.isEnabled
+        ) { _ -> SignalProducer<SuperSecuredData, APIError> in
             authorizationAction.apply(()).expectedToBeEnabled()
                 .flatMap(.latest) { token -> SignalProducer<SuperSecuredData, APIError> in
                     biographyAction.apply(token).expectedToBeEnabled()

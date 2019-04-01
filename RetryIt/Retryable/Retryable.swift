@@ -28,7 +28,7 @@ struct RetryableAction<Input, Output, Error: Swift.Error> {
         self.error = Property(
             initial: nil,
             then: retryable.retryable
-            ).skipNilRepeats()
+        ).skipNilRepeats()
     }
 }
 

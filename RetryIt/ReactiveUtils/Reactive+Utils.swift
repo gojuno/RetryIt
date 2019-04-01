@@ -106,3 +106,14 @@ extension SignalProducer where Value: OptionalType {
         return lift { $0.ignoreNil() }
     }
 }
+
+func && <L: PropertyProtocol, R: PropertyProtocol> (_ l: L, _ r: R) -> Property<Bool> where L.Value == Bool, R.Value == Bool {
+    return l
+        .flatMap(.latest) { l -> Property<Bool> in
+            switch l {
+            case false: return Property(value: l)
+            case true: return Property(r)
+            }
+        }
+        .skipRepeats()
+}

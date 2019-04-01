@@ -9,6 +9,12 @@
 import ReactiveSwift
 import Result
 
+enum APIError: Error {
+    case noInternet
+    case service
+    case notAllowed
+}
+
 extension SignalProducer {
 
     static func request(value: Value) -> SignalProducer<Value, Error> {
