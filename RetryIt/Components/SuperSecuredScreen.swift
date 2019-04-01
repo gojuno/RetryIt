@@ -37,16 +37,15 @@ final class SuperSecuredScreen {
 
         let retryableAction = RetryableAction(original: action)
 
-        self.state = retryableAction.makeOneShotStateProperty(input: ())
-        self.alert = self.state.producer
+        let state = retryableAction.makeOneShotStateProperty(input: ())
+        self.alert = state.producer
             .map { $0.alert }
             .ignoreNil()
-        self.child = self.state.producer
+        self.child = state.producer
             .map(SuperSecuredScreenChild.init)
             .ignoreNil()
     }
 
-    private let state: Property<LoadingState<SuperSecuredData, APIError>>
     // sourcery: presentable, type = * $SuperSecuredScreenChild
     private let child: SignalProducer<SuperSecuredScreenChild, NoError>
     // sourcery: presentable, type = * Alert
