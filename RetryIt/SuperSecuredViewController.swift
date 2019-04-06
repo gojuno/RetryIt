@@ -13,6 +13,7 @@ final class SuperSecuredViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Super secured screen"
         self.view.backgroundColor = .white
 
         self.view.addSubview(self.loadingView)
@@ -36,12 +37,13 @@ final class SuperSecuredViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 30)
         return label
     }()
+
     private let loadingView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .whiteLarge)
-        view.color = .black
+        view.color = .primary
         return view
     }()
 }
@@ -70,6 +72,7 @@ extension SuperSecuredViewController {
             switch presentable {
             case let .content(biography):
                 someSelf.loadingView.isHidden = true
+                someSelf.contentLabel.textColor = .primary
                 return someSelf.contentLabel.textPresenter.present(biography)
             case .loading:
                 someSelf.loadingView.startAnimating()
@@ -77,6 +80,7 @@ extension SuperSecuredViewController {
                 return nil
             case let .error(text):
                 someSelf.loadingView.isHidden = true
+                someSelf.contentLabel.textColor = .error
                 return someSelf.contentLabel.textPresenter.present(text)
             }
         }

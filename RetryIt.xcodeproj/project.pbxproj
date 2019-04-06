@@ -21,6 +21,7 @@
 		2F34E3F6224BBFEC00279BE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F34E3F4224BBFEC00279BE8 /* LaunchScreen.storyboard */; };
 		2F34E3FF224BC1A000279BE8 /* FraktalSimplified.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F34E3FE224BC1A000279BE8 /* FraktalSimplified.framework */; };
 		2F34E402224BC2B700279BE8 /* Retryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34E401224BC2B700279BE8 /* Retryable.swift */; };
+		2F9EB438225641F400AB54C6 /* UI+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9EB437225641F400AB54C6 /* UI+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2F34E3F7224BBFEC00279BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F34E3FE224BC1A000279BE8 /* FraktalSimplified.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FraktalSimplified.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F34E401224BC2B700279BE8 /* Retryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retryable.swift; sourceTree = "<group>"; };
+		2F9EB437225641F400AB54C6 /* UI+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		2F34E3EA224BBFEA00279BE8 /* RetryIt */ = {
 			isa = PBXGroup;
 			children = (
+				2F9EB436225641E300AB54C6 /* UI+Utils */,
 				2F22846C2250E7D00011B29A /* ReactiveUtils */,
 				2F22841F224CD8910011B29A /* Alert */,
 				2F22841A224CD7F70011B29A /* Generated */,
@@ -138,6 +141,14 @@
 				2F34E401224BC2B700279BE8 /* Retryable.swift */,
 			);
 			path = Retryable;
+			sourceTree = "<group>";
+		};
+		2F9EB436225641E300AB54C6 /* UI+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2F9EB437225641F400AB54C6 /* UI+Utils.swift */,
+			);
+			path = "UI+Utils";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				2F22841D224CD7F70011B29A /* AutoAnyPresentableEnumV2Declaration.generated.swift in Sources */,
 				2F22846E2250E7E30011B29A /* Reactive+Utils.swift in Sources */,
 				2F130BF7224BE35C000E0404 /* SuperSecuredScreen.swift in Sources */,
+				2F9EB438225641F400AB54C6 /* UI+Utils.swift in Sources */,
 				2F22846B224D028F0011B29A /* Endpoint+Helpers.swift in Sources */,
 				2F130BFB224BF094000E0404 /* AuthorizationEndpoint.swift in Sources */,
 				2F34E402224BC2B700279BE8 /* Retryable.swift in Sources */,
