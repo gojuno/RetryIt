@@ -38,23 +38,17 @@ final class SuperSecuredScreen {
         let retryableAction = RetryableAction(original: action)
 
         let state = retryableAction.makeOneShotStateProperty(input: ())
-        self.alert = state.producer
-            .map { $0.alert }
-            .ignoreNil()
-        self.child = state.producer
-            .map(SuperSecuredScreenChild.init)
-            .ignoreNil()
+        self.child = state.producer.map(SuperSecuredScreenChild.init)
     }
 
     // sourcery: presentable, type = * $SuperSecuredScreenChild
     private let child: SignalProducer<SuperSecuredScreenChild, NoError>
-    // sourcery: presentable, type = * Alert
-    private let alert: SignalProducer<Alert, NoError>
 }
 
 // sourcery: presentableV2
 enum SuperSecuredScreenChild {
     case content(SuperSecuredData)
+    case alert(Alert)
     case error(String)
     case loading
 }
@@ -68,7 +62,6 @@ extension SuperSecuredScreen: Presentable {
             guard let sself = self else { return nil }
             let disposable = CompositeDisposable()
             disposable += presenters.child.present(sself.child.producer.map { SuperSecuredScreenChildAnyPresentable($0) })
-            disposable += presenters.alert.present(sself.alert)
             return disposable
         }
     }
@@ -84,6 +77,8 @@ internal extension SuperSecuredScreenChildAnyPresentable {
         switch value {
         case .content(let item):
             self = .content(item)
+        case .alert(let item):
+            self = .alert(item)
         case .error(let item):
             self = .error(item)
         case .loading:
@@ -96,10 +91,16 @@ internal extension SuperSecuredScreenChildAnyPresentable {
 
 private extension SuperSecuredScreenChild {
 
-    init?(_ state: LoadingState<SuperSecuredData, APIError>) {
+    init(_ state: LoadingState<SuperSecuredData, APIError>) {
         switch state {
-        case .error:
-            return nil
+        case let .error(retryable):
+            let error = retryable.error
+            let alert = makeAlert(
+                error: error,
+                retry: error.isRetryable ? retryable.retry : nil,
+                ignore: retryable.ignore
+            )
+            self = .alert(alert)
         case let .ignored(error):
             self = .error(error.reason)
         case let .loaded(value):

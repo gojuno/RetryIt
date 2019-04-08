@@ -9,6 +9,7 @@ import ReactiveSwift
 
 enum SuperSecuredScreenChildAnyPresentable {
     case content(SuperSecuredData)
+    case alert(Alert)
     case error(String)
     case loading
 }

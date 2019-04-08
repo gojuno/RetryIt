@@ -57,8 +57,7 @@ extension SuperSecuredViewController {
             }
             return presentable.present(
                 SuperSecuredScreenPresenters(
-                    child: someSelf.childPresenter,
-                    alert: someSelf.alertPresenter
+                    child: someSelf.childPresenter
                 )
             )
         }
@@ -70,6 +69,8 @@ extension SuperSecuredViewController {
                 return nil
             }
             switch presentable {
+            case let .alert(alert):
+                return someSelf.alertPresenter.present(alert)
             case let .content(biography):
                 someSelf.loadingView.isHidden = true
                 someSelf.contentLabel.textColor = .primary

@@ -10,13 +10,10 @@ import ReactiveSwift
 struct SuperSecuredScreenPresenters {
 
     let child: Presenter<SuperSecuredScreenChildAnyPresentable>
-    let alert: Presenter<Alert>
 
     init(
-        child: Presenter<SuperSecuredScreenChildAnyPresentable>,
-        alert: Presenter<Alert>
+        child: Presenter<SuperSecuredScreenChildAnyPresentable>
     ) {
         self.child = child
-        self.alert = alert
     }
 }
