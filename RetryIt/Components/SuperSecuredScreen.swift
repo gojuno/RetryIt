@@ -37,7 +37,7 @@ final class SuperSecuredScreen {
 
         let retryableAction = RetryableAction(original: action)
 
-        let state = retryableAction.makeOneShotStateProperty(input: ())
+        let state = retryableAction.makeOneShotStateProperty()
         self.alert = state.producer
             .map { $0.alert }
             .ignoreNil()

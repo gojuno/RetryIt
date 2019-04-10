@@ -183,3 +183,10 @@ extension RetryableAction {
         ).map { $0 ?? .loading }
     }
 }
+
+extension RetryableAction where Input == Void {
+
+    func makeOneShotStateProperty() -> Property<LoadingState<Output, Error>> {
+        return makeOneShotStateProperty(input: ())
+    }
+}
